@@ -1,7 +1,8 @@
   
-if (process.env.NODE_ENV !== 'production') {//  Retorna onde o Node está rodando
+if(process.env.NODE_ENV !== 'production') {//  Retorna onde o Node está rodando
   require("dotenv").config(); // carrega o arquivo dotEnv para o servidor(no nosso caso, o banco local)
 }
+
 const express = require("express");
 const Conn = require("./model/conn/conn");
 // const Filme = require("./model/filmes");
