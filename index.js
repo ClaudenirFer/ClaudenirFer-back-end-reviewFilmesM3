@@ -1,9 +1,7 @@
-
-  require("dotenv").config(); 
   
-// if (process.env.NODE_ENV !== 'production') {//  Retorna onde o Node está rodando
-//   require("dotenv").config(); // carrega o arquivo dotEnv para o servidor(no nosso caso, o banco local)
-// }
+if (process.env.NODE_ENV !== 'production') {//  Retorna onde o Node está rodando
+  require("dotenv").config(); // carrega o arquivo dotEnv para o servidor(no nosso caso, o banco local)
+}
 const express = require("express");
 const Conn = require("./model/conn/conn");
 // const Filme = require("./model/filmes");
@@ -23,9 +21,7 @@ Conn(db_url, db_user, db_pass, db_data);
 
 app.use("/filmes", router);
 
-app.listen(port, () => {
+
+app.listen(process.env.PORT || port, () => {
   console.log("Servidor rodando na porta ", port);
 });
-// app.listen(process.env.PORT || port, () => {
-//   console.log("Servidor rodando na porta ", port);
-// });
