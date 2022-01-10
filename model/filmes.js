@@ -8,6 +8,6 @@ const filmesModel = mongoose.Schema({
   dataCad: { type: Date, default: Date.now },
 });
 
-const Filme = mongoose.model("movel", filmesModel);
+const Filme = mongoose.model("movels", filmesModel);
 
 module.exports = Filme;
